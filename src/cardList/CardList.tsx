@@ -1,8 +1,9 @@
 import Cardbox from 'cardbox/Cardbox';
 import * as S from './CardList_Style';
+import { Data } from '../interfaces';
 
 interface CardListPropsType {
-  counselingState: any[];
+  counselingState: Data[];
   counselingStateFilter: {}[];
   toggleState: boolean;
   firestFilterValue: string;
@@ -16,6 +17,7 @@ export default function CardList(props: CardListPropsType) {
     toggleState,
     firestFilterValue,
   } = props;
+  console.log(counselingState);
 
   const firestFilteringCounselingState = counselingState?.filter(it =>
     new RegExp(firestFilterValue, 'i').test(it.method)
