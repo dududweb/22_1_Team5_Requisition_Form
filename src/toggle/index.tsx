@@ -20,7 +20,6 @@ export default function Toggle(props: FilterPropsType11) {
 // const [counselingState, setCounselingState] = useState([]);
 // const [counselingState1, setCounselingState1] = useState([{}]);
 // const [toggleState, setToggleState] = useState(false);
-// console.log(counselingState1);
 
 // const changeCounseling = () => {
 //   setToggleState(!toggleState);

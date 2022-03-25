@@ -17,7 +17,6 @@ export default function CardList(props: CardListPropsType) {
     toggleState,
     firestFilterValue,
   } = props;
-  console.log(counselingState);
 
   const firestFilteringCounselingState = counselingState?.filter(it =>
     new RegExp(firestFilterValue, 'i').test(it.method)
