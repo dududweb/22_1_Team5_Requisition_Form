@@ -18,13 +18,18 @@ export default function CardList(props: CardListPropsType) {
     firestFilterValue,
   } = props;
 
-  const firestFilteringCounselingState = counselingState?.filter(it =>
-    new RegExp(firestFilterValue, 'i').test(it.method)
+  const 첫번째선택필터 = counselingState?.filter(it => it.method);
+
+  const firestFilteringCounselingStateFilter = 첫번째선택필터?.filter(
+    it => it.method
   );
 
-  const firestFilteringCounselingStateFilter = counselingStateFilter?.filter(
-    (it: any) => new RegExp(firestFilterValue, 'i').test(it.method)
+  console.log('firestFilteringCounselingState', 첫번째선택필터);
+  console.log(
+    'firestFilteringCounselingStateFilter',
+    firestFilteringCounselingStateFilter
   );
+  console.log('counselingStateFilter', counselingStateFilter);
 
   return (
     <div>
@@ -54,7 +59,7 @@ export default function CardList(props: CardListPropsType) {
             </S.Container>
           ) : (
             <S.Container>
-              {firestFilteringCounselingState?.map((List, index) => {
+              {첫번째선택필터?.map((List, index) => {
                 return <Cardbox key={index} List={List} />;
               })}
             </S.Container>

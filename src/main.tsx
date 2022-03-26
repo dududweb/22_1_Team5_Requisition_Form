@@ -23,6 +23,7 @@ export default function Main() {
       data[data.map(list => list.status).indexOf('상담중')],
     ]);
   };
+  console.log('counselingStateFilter', counselingStateFilter);
 
   useEffect(() => {
     getData();
