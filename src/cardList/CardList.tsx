@@ -20,15 +20,10 @@ export default function CardList(props: CardListPropsType) {
 
   const 첫번째선택필터 = counselingState?.filter(it => it.method);
 
-  const firestFilteringCounselingStateFilter = 첫번째선택필터?.filter(
-    it => it.method
-  );
+  const 두번째필터 = 첫번째선택필터?.filter(it => it.method);
 
   console.log('firestFilteringCounselingState', 첫번째선택필터);
-  console.log(
-    'firestFilteringCounselingStateFilter',
-    firestFilteringCounselingStateFilter
-  );
+  console.log('두번째필터', 두번째필터);
   console.log('counselingStateFilter', counselingStateFilter);
 
   return (
@@ -43,7 +38,7 @@ export default function CardList(props: CardListPropsType) {
             </S.Container>
           ) : (
             <S.Container>
-              {firestFilteringCounselingStateFilter?.map((List, index) => {
+              {두번째필터?.map((List, index) => {
                 return <Cardbox key={index} List={List} />;
               })}
             </S.Container>
